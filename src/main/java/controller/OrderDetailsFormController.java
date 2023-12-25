@@ -40,7 +40,7 @@ public class OrderDetailsFormController {
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
 
-        //loadOrderDetailTable();
+        loadOrderDetailTable();
 
         //tblCustomer.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
            // setData(newValue);

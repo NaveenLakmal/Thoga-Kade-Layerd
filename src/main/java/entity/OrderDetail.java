@@ -24,6 +24,13 @@ public class OrderDetail {
     @JoinColumn(name = "order_id")
     Orders orders;
 
+    public String getOrderId() {
+        return id.getOrderId();
+    }
+    public String getItemCode() {
+        return id.getItemCode();
+    }
+
     private int qty;
     private double unitPrice;
 

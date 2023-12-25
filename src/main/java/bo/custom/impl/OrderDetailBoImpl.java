@@ -22,14 +22,15 @@ public class OrderDetailBoImpl implements OrderDetailBo {
     @Override
     public List<OrderDetailDto> allOrderDetails() throws SQLException, ClassNotFoundException {
         System.out.println("test OD BO lline 1");
-        List<OrderDetailDto> all = orderDetailDao.getAll();
+        List<OrderDetail> entityList = orderDetailDao.getAll();
         List<OrderDetailDto> list = new ArrayList<>();
-        for (OrderDetailDto orderDetailDto:all) {
+
+        for (OrderDetail orderDetail:entityList) {
             list.add(new OrderDetailDto(
-                    orderDetailDto.getOrderId(),
-                    orderDetailDto.getItemCode(),
-                    orderDetailDto.getQty(),
-                    orderDetailDto.getUnitPrice()
+                    orderDetail.getItemCode(),
+                    orderDetail.getOrderId(),
+                    orderDetail.getQty(),
+                    orderDetail.getUnitPrice()
             ));
         }
         return list;

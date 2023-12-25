@@ -43,13 +43,14 @@ public class OrderDetailDaoImpl implements OrderDetailDao {
 //        return false;
 //    }
 
+
     @Override
-    public boolean save(OrderDetailDto entity) throws SQLException, ClassNotFoundException {
+    public boolean save(OrderDetail entity) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean update(OrderDetailDto entity) throws SQLException, ClassNotFoundException {
+    public boolean update(OrderDetail entity) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -59,10 +60,10 @@ public class OrderDetailDaoImpl implements OrderDetailDao {
     }
 
     @Override
-    public List<OrderDetailDto> getAll() throws SQLException, ClassNotFoundException {
+    public List<OrderDetail> getAll() throws SQLException, ClassNotFoundException {
         Session session = HibernateUtil.getSession();
         Query query = session.createQuery("FROM OrderDetail ");
-        List<OrderDetailDto> list = query.list();
+        List<OrderDetail> list = query.list();
 
         session.close();
 //        System.out.println(""+list);
