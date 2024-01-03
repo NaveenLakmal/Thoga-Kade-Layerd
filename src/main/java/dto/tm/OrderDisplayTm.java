@@ -1,5 +1,6 @@
-package dto;
+/*package dto.tm;
 
+import dto.OrderDetailDto;
 import lombok.*;
 
 import java.util.List;
@@ -9,16 +10,20 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class OrderDto {
-    private String orderId;
+public class OrderDisplayTm {
 
-    public OrderDto(String orderId, String date, String custId) {
+    private String orderId;
+    private String customerName;
+
+    public OrderDisplayTm(String orderId, String date, String custId,String customerName) {
         this.orderId = orderId;
         this.date = date;
         this.custId = custId;
+        this.customerName=customerName;
     }
 
     private String date;
     private String custId;
     private List<OrderDetailDto> list;
 }
+*/

@@ -16,6 +16,7 @@ public class Orders {
     @Id
     private String orderId;
     private String date;
+   //private String custId;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")

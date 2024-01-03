@@ -23,6 +23,7 @@ import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import org.hibernate.exception.ConstraintViolationException;
 
 import java.io.IOException;
 import java.sql.*;
@@ -117,15 +118,19 @@ public class CustomerFormController {
 
         try {
             boolean isDeleted = customerBo.deleteCustomer(id);
-            if (isDeleted){
-                new Alert(Alert.AlertType.INFORMATION,"Customer Deleted!").show();
+            if (isDeleted) {
+                new Alert(Alert.AlertType.INFORMATION, "Customer Deleted!").show();
                 loadCustomerTable();
-            }else{
-                new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
             }
-
-        } catch (ClassNotFoundException | SQLException e) {
+        }
+        catch (ClassNotFoundException | SQLException e) {
+            //new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
             e.printStackTrace();
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
         }
     }
 

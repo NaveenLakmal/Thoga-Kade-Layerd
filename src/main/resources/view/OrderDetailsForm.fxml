@@ -10,19 +10,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="679.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderDetailsFormController">
+<AnchorPane prefHeight="679.0" prefWidth="1012.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderDetailsFormController">
    <children>
-      <TableView fx:id="tblOrderDetail" layoutX="195.0" layoutY="204.0" prefHeight="343.0" prefWidth="638.0">
+      <TableView fx:id="tblOrderDetail" layoutX="206.0" layoutY="383.0" prefHeight="251.0" prefWidth="615.0">
          <columns>
-            <TableColumn fx:id="colOrderId" prefWidth="161.0" text="Order-ID" />
-            <TableColumn fx:id="colCode" prefWidth="169.0" text="Item-ID" />
-            <TableColumn fx:id="colQty" prefWidth="115.0" text="QTY" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="192.0" text="Unit Price" />
+            <TableColumn fx:id="colOrderCode" prefWidth="121.0" text="Order-ID" />
+            <TableColumn fx:id="colItemId" prefWidth="173.0" text="Item-ID" />
+            <TableColumn fx:id="colQty" prefWidth="123.0" text="QTY" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="196.0" text="Unit Price" />
          </columns>
       </TableView>
-      <Button layoutX="862.0" layoutY="595.0" mnemonicParsing="false" onAction="#reloadButtonOnAction" prefHeight="31.0" prefWidth="85.0" text="Reload" />
-      <TextField fx:id="txtCode" layoutX="122.0" layoutY="124.0" prefHeight="40.0" prefWidth="176.0" />
-      <Label layoutX="128.0" layoutY="77.0" prefHeight="40.0" prefWidth="111.0" text="Search" />
+      <Button layoutX="886.0" layoutY="603.0" mnemonicParsing="false" onAction="#reloadButtonOnAction" prefHeight="31.0" prefWidth="85.0" text="Reload" />
+      <TextField fx:id="txtCode" layoutX="145.0" layoutY="21.0" prefHeight="40.0" prefWidth="176.0" />
+      <Label layoutX="350.0" layoutY="21.0" prefHeight="40.0" prefWidth="111.0" text="Search" />
 
       <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="41.0" layoutY="23.0" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="20.0">
          <graphic>
@@ -33,5 +33,12 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <TableView fx:id="tblOrder" layoutX="285.0" layoutY="114.0" prefHeight="226.0" prefWidth="427.0">
+        <columns>
+          <TableColumn fx:id="orderColOrderId" prefWidth="106.0" text="Order-ID" />
+          <TableColumn fx:id="orderColDate" prefWidth="185.0" text="DATE" />
+            <TableColumn fx:id="orderColCustomerId" prefWidth="135.0" text="Customer-ID" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

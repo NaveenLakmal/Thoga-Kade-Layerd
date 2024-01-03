@@ -66,11 +66,21 @@ public class DashboardFormController {
     public void ordersButtonOnAction(ActionEvent actionEvent) {
         Stage stage = (Stage) pane.getScene().getWindow();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OrderDetailsForm.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OrderForm.fxml"))));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+    }
+
+    public void orderDetailButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OrderDetailsForm.fxml"))));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -153,6 +153,8 @@ public class ItemFormController {
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
         }
     }
 
@@ -170,7 +172,7 @@ public class ItemFormController {
                         dto.getQty(),
                         btn
                 );
-               System.out.println(dtoList);
+               //System.out.println(dtoList);
 
                 btn.setOnAction(actionEvent -> {
                     deleteItem(c.getCode());

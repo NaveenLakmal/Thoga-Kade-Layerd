@@ -9,6 +9,7 @@ import dao.custom.OrderDao;
 import entity.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -85,7 +86,26 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<OrderDto> getAll() throws SQLException, ClassNotFoundException {
-        return null;
+        Session session = HibernateUtil.getSession();
+        Query query = session.createQuery("FROM Orders");
+        List<Orders> ordersList = query.list();
+        List<OrderDto> orderDtoList=new ArrayList<>();
+
+        for (Orders orders:ordersList) {
+            orderDtoList.add(new OrderDto(
+                  orders.getOrderId(),
+                  orders.getDate(),
+                  orders.getCustomer().getId()
+
+            ));
+
+        }
+
+        session.close();
+        //System.out.println(list);
+        return orderDtoList;
+
+
     }
 
     @Override
