@@ -21,7 +21,7 @@ public class OrderDetailBoImpl implements OrderDetailBo {
 
     @Override
     public List<OrderDetailDto> allOrderDetails() throws SQLException, ClassNotFoundException {
-        System.out.println("test OD BO lline 1");
+
         List<OrderDetail> entityList = orderDetailDao.getAll();
         List<OrderDetailDto> list = new ArrayList<>();
 

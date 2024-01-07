@@ -14,10 +14,10 @@
    <children>
       <TableView fx:id="tblOrderDetail" layoutX="206.0" layoutY="383.0" prefHeight="251.0" prefWidth="615.0">
          <columns>
-            <TableColumn fx:id="colOrderCode" prefWidth="121.0" text="Order-ID" />
-            <TableColumn fx:id="colItemId" prefWidth="173.0" text="Item-ID" />
+            <TableColumn fx:id="colOrderCode" prefWidth="121.0" text="Item-ID" />
+            <TableColumn fx:id="colItemId" prefWidth="173.0" text="Order-ID" />
             <TableColumn fx:id="colQty" prefWidth="123.0" text="QTY" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="196.0" text="Unit Price" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="197.0" text="Unit Price" />
          </columns>
       </TableView>
       <Button layoutX="886.0" layoutY="603.0" mnemonicParsing="false" onAction="#reloadButtonOnAction" prefHeight="31.0" prefWidth="85.0" text="Reload" />

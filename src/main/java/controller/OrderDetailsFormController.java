@@ -78,7 +78,26 @@ public class OrderDetailsFormController {
             // Wrap the list of items in a FilteredList and set the predicate
             FilteredList<OrderDto> filteredList = new FilteredList<>(tblOrder.getItems(), predicate);
             tblOrder.setItems(filteredList);
+
         });
+
+        txtCode.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Create a predicate to filter the items
+            Predicate<OrderDetailTm> predicate2 = OrderDetailTm ->
+                    OrderDetailTm.getItemCode().toLowerCase().contains(newValue.toLowerCase()) ;
+
+            // Wrap the list of items in a FilteredList and set the predicate
+            FilteredList<OrderDetailTm> filteredList2 = new FilteredList<>(tblOrderDetail.getItems(), predicate2);
+            tblOrderDetail.setItems(filteredList2);
+
+        });
+
+
+
+
+
+
+
 
     }
 
@@ -114,7 +133,7 @@ public class OrderDetailsFormController {
         try {
 
             List<OrderDetailDto> dtoList = orderDetailBo.allOrderDetails();
-            System.out.println("Load list" + dtoList);
+           // System.out.println("Load list" + dtoList);
 
 
 
@@ -127,13 +146,13 @@ public class OrderDetailsFormController {
                         dto.getUnitPrice()
 
                 );
-                System.out.println("" + c);
+               // System.out.println("" + c);
 
 
                 tmList.add(c);
             }
             tblOrderDetail.setItems(tmList);
-            System.out.println("Load" + dtoList);
+           // System.out.println("Load" + dtoList);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -164,7 +183,7 @@ public class OrderDetailsFormController {
 
 
             tblOrder.setItems(tmList);
-            System.out.println("Load" + dtoList);
+           // System.out.println("Load" + dtoList);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -173,7 +192,8 @@ public class OrderDetailsFormController {
     }
 
     public void reloadButtonOnAction(ActionEvent actionEvent) {
-       // loadOrderTable();
+        loadOrderTable();
+        loadOrderDetailTable();
     }
     public void backButtonOnAction(ActionEvent actionEvent) {
         Stage stage = (Stage)tblOrderDetail.getScene().getWindow();

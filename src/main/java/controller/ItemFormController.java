@@ -185,8 +185,8 @@ public class ItemFormController {
 
 
 
-            System.out.println(dtoList);
-            System.out.println(tmList);
+           // System.out.println(dtoList);
+           // System.out.println(tmList);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

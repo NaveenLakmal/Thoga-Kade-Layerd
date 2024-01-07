@@ -66,7 +66,7 @@ public class OrderDetailDaoImpl implements OrderDetailDao {
         List<OrderDetail> list = query.list();
 
         session.close();
-//        System.out.println(""+list);
+
 
         return list;
     }
